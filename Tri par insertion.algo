@@ -1,0 +1,22 @@
+ALGORITHM Tri_insertion
+VAR
+    T : ARRAY_OF INTEGER [10];
+    i,j,k : INTEGER ; 
+BEGIN
+    Read(T[0]); 
+    FOR i FROM 1 TO T.length -1  DO
+        IF (T[i]<T[i-1]) THEN
+            FOR j FROM 0 TO i-1  DO
+                IF (T[i]<T[j]) THEN
+                   FOR k FROM i TO j+1 STEP -1  DO
+                       T[k]:= T[k-1]
+                   END_FOR
+                   T[j]:= T[i];
+                END_IF
+            END_FOR
+        ELSE
+            Read(T[i])
+        END_IF
+    END_FOR
+    
+END
